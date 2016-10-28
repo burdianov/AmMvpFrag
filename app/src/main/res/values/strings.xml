@@ -25,5 +25,7 @@
     <string name="my_notifications">My Notifications</string>
     <string name="user_first_name">User First Name</string>
     <string name="show_catalog">Show the catalog</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
 
 </resources>
