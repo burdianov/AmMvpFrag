@@ -33,4 +33,6 @@ public interface IAuthView {
     void setTypeface();
 
     void addChangeTextListeners();
+
+    void showCatalogScreen();
 }

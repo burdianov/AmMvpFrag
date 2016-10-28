@@ -1,6 +1,7 @@
 package com.testography.am_mvp.ui.activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -170,6 +171,12 @@ public class SplashActivity extends AppCompatActivity implements IAuthView, View
                 mLoginBtn));
         mPasswordEt.addTextChangedListener(new CustomTextWatcher(this,
                 mPasswordEt, mLoginBtn));
+    }
+
+    @Override
+    public void showCatalogScreen() {
+        Intent intent = new Intent(this, RootActivity.class);
+        startActivity(intent);
     }
 
     private void setSocialButtonsAnimation(ImageButton button) {
