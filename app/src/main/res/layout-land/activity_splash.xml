@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:fitsSystemWindows="true"
-    tools:context=".ui.activities.RootActivity">
+    tools:context=".ui.activities.SplashActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,10 +22,10 @@
 
             <ImageView
                 android:id="@+id/logo_img"
-                android:contentDescription="@string/app_logo"
                 android:layout_width="@dimen/login_logo_width_70"
                 android:layout_height="@dimen/login_logo_height_100"
                 android:layout_gravity="center|top"
+                android:contentDescription="@string/app_logo"
                 android:src="@drawable/firebase_icon"/>
 
             <TextView
@@ -121,36 +121,36 @@
 
             <ImageButton
                 android:id="@+id/facebook_ib"
-                android:contentDescription="Facebook button"
                 android:layout_width="@dimen/size_medium_56"
                 android:layout_height="@dimen/size_medium_56"
                 android:layout_marginBottom="@dimen/spacing_normal_16"
-                android:layout_marginTop="@dimen/spacing_normal_16"
                 android:layout_marginLeft="@dimen/spacing_small_8"
                 android:layout_marginRight="@dimen/spacing_small_8"
-                android:background="@drawable/fb_selector_btn"/>
+                android:layout_marginTop="@dimen/spacing_normal_16"
+                android:background="@drawable/fb_selector_btn"
+                android:contentDescription="Facebook button"/>
 
             <ImageButton
                 android:id="@+id/twitter_ib"
-                android:contentDescription="Twitter button"
                 android:layout_width="@dimen/size_medium_56"
                 android:layout_height="@dimen/size_medium_56"
                 android:layout_marginBottom="@dimen/spacing_normal_16"
-                android:layout_marginTop="@dimen/spacing_normal_16"
                 android:layout_marginLeft="@dimen/spacing_small_8"
                 android:layout_marginRight="@dimen/spacing_small_8"
-                android:background="@drawable/twitter_selector_btn"/>
+                android:layout_marginTop="@dimen/spacing_normal_16"
+                android:background="@drawable/twitter_selector_btn"
+                android:contentDescription="Twitter button"/>
 
             <ImageButton
                 android:id="@+id/vk_ib"
-                android:contentDescription="VK button"
                 android:layout_width="@dimen/size_medium_56"
                 android:layout_height="@dimen/size_medium_56"
                 android:layout_marginBottom="@dimen/spacing_normal_16"
-                android:layout_marginTop="@dimen/spacing_normal_16"
                 android:layout_marginLeft="@dimen/spacing_small_8"
                 android:layout_marginRight="@dimen/spacing_small_8"
-                android:background="@drawable/vk_selector_btn"/>
+                android:layout_marginTop="@dimen/spacing_normal_16"
+                android:background="@drawable/vk_selector_btn"
+                android:contentDescription="VK button"/>
 
         </LinearLayout>
 
