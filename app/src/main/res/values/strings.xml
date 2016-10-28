@@ -18,5 +18,12 @@
     <string name="err_msg_password">Password too short</string>
     <string name="err_msg_email">Wrong email format</string>
     <string name="app_logo">App logo</string>
+    <string name="personal_profile">Personal Profile</string>
+    <string name="items_catalog">Items Catalog</string>
+    <string name="favorites">Favorites</string>
+    <string name="my_orders">My Orders</string>
+    <string name="my_notifications">My Notifications</string>
+    <string name="user_first_name">User First Name</string>
+    <string name="show_catalog">Show the catalog</string>
 
 </resources>

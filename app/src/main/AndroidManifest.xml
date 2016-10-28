@@ -12,7 +12,9 @@
         <activity android:name=".ui.activities.RootActivity">
 
         </activity>
-        <activity android:name=".ui.activities.SplashActivity">
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
