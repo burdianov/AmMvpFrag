@@ -2,7 +2,6 @@ package com.testography.am_mvp.mvp.presenters;
 
 import android.content.Context;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 
 import com.testography.am_mvp.R;
 import com.testography.am_mvp.data.managers.DataManager;
@@ -11,15 +10,14 @@ import com.testography.am_mvp.mvp.views.IAuthView;
 import com.testography.am_mvp.ui.custom_views.AuthPanel;
 import com.testography.am_mvp.utils.CredentialsValidator;
 
-import java.lang.ref.WeakReference;
-
-public class AuthPresenter implements IAuthPresenter {
+public class AuthPresenter extends AbstractPresenter<IAuthView> implements
+        IAuthPresenter {
 
     private static Context sAppContext = DataManager.getInstance().getAppContext();
     private static AuthPresenter ourInstance = new AuthPresenter();
 
     private AuthModel mAuthModel;
-    private WeakReference<IAuthView> mAuthView;
+    private IAuthView mAuthView;
 
     private AuthPresenter() {
         mAuthModel = new AuthModel();
@@ -27,16 +25,6 @@ public class AuthPresenter implements IAuthPresenter {
 
     public static AuthPresenter getInstance() {
         return ourInstance;
-    }
-
-    @Override
-    public void takeView(IAuthView authView) {
-        mAuthView = new WeakReference<IAuthView>(authView);
-    }
-
-    @Override
-    public void dropView() {
-        mAuthView = null;
     }
 
     @Override
@@ -51,12 +39,6 @@ public class AuthPresenter implements IAuthPresenter {
             getView().addChangeTextListeners();
             getView().setTypeface();
         }
-    }
-
-    @Nullable
-    @Override
-    public IAuthView getView() {
-        return mAuthView.get();
     }
 
     @Override
