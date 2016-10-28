@@ -5,5 +5,6 @@
     <color name="colorAccent">#FFA815</color>
 
     <color name="social_btn_background">#80000000</color>
+    <color name="grey">#5D5D5D</color>
     <color name="grey_light">#EDEFF3</color>
 </resources>
