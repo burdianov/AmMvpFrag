@@ -105,7 +105,7 @@ public class ProductFragment extends Fragment implements IProductView, View.OnCl
     @Override
     public void updateProductCountView(ProductDto product) {
         mProductCountTxt.setText(String.valueOf(product.getCount()));
-        if (product.getCount() > 0) {
+        if (product.getCount() >= 0) {
             mProductPriceTxt.setText(String.valueOf(product.getCount() * product
                     .getPrice() + ".-"));
         }
