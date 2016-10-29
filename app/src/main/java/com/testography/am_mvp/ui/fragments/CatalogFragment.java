@@ -20,6 +20,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import me.relex.circleindicator.CircleIndicator;
 
 public class CatalogFragment extends Fragment implements ICatalogView, View.OnClickListener {
     public static final String TAG = "CatalogFragment";
@@ -29,6 +30,8 @@ public class CatalogFragment extends Fragment implements ICatalogView, View.OnCl
     Button mAddToCartBtn;
     @BindView(R.id.product_pager)
     ViewPager mProductPager;
+    @BindView(R.id.indicator)
+    CircleIndicator mIndicator;
 
     public CatalogFragment() {
 
@@ -72,6 +75,7 @@ public class CatalogFragment extends Fragment implements ICatalogView, View.OnCl
             adapter.addItem(product);
         }
         mProductPager.setAdapter(adapter);
+        mIndicator.setViewPager(mProductPager);
     }
 
     @Override

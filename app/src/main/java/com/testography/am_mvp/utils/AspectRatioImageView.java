@@ -1,4 +1,4 @@
-package com.testography.am_mvp.ui.custom_views;
+package com.testography.am_mvp.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;

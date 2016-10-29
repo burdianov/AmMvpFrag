@@ -98,7 +98,6 @@ public class AuthPresenter extends AbstractPresenter<IAuthView> implements
     @Override
     public void clickOnShowCatalog() {
         if (getView() != null) {
-            getView().showMessage("Show the catalog");
             // TODO: 28-Oct-16 start catalog screen if data updating is complete
             getView().showCatalogScreen();
         }

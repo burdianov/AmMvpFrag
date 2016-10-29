@@ -26,7 +26,7 @@
 
             <!-- TODO: aspectRatio ImageView -->
 
-            <com.testography.am_mvp.ui.custom_views.AspectRatioImageView
+            <com.testography.am_mvp.utils.AspectRatioImageView
                 android:id="@+id/product_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
