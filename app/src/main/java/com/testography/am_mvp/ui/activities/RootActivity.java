@@ -1,6 +1,8 @@
 package com.testography.am_mvp.ui.activities;
 
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -17,12 +19,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.testography.am_mvp.BuildConfig;
 import com.testography.am_mvp.R;
 import com.testography.am_mvp.mvp.views.IView;
 import com.testography.am_mvp.ui.fragments.AccountFragment;
 import com.testography.am_mvp.ui.fragments.CatalogFragment;
+import com.testography.am_mvp.utils.RoundedAvatarDrawable;
+
+import java.io.InputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -60,6 +66,7 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
                     .replace(R.id.fragment_container, new CatalogFragment())
                     .commit();
         }
+
     }
 
     private void initDrawer() {
@@ -68,6 +75,7 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
         mDrawer.setDrawerListener(toggle);
         toggle.syncState();
         mNavigationView.setNavigationItemSelectedListener(this);
+        setupRoundedAvatar();
     }
 
     private void initToolbar() {
@@ -99,6 +107,18 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
         }
         mDrawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setupRoundedAvatar() {
+        ImageView avatar = (ImageView) mNavigationView.getHeaderView(0)
+                .findViewById(R.id.user_avatar_iv);
+        InputStream resource = getResources().openRawResource(R.raw.user_avatar);
+        Bitmap bitmap = BitmapFactory.decodeStream(resource);
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            avatar.setBackgroundDrawable(new RoundedAvatarDrawable(bitmap));
+        } else {
+            avatar.setBackground(new RoundedAvatarDrawable(bitmap));
+        }
     }
 
     //region ==================== IView ===================

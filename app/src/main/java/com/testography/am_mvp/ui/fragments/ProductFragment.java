@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.testography.am_mvp.R;
 import com.testography.am_mvp.data.storage.dto.ProductDto;
 import com.testography.am_mvp.mvp.presenters.ProductPresenter;
@@ -98,8 +100,17 @@ public class ProductFragment extends Fragment implements IProductView, View.OnCl
             mProductPriceTxt.setText(String.valueOf(product.getPrice() + ".-"));
         }
 
-        // TODO: 28-Oct-16 Picasso load from url
-        mProductImage.setImageDrawable(mProductDraw);
+        // TODO: 29-Oct-16 find the solution how to maintain proper size
+        // TODO: without using dontAnimate
+        Glide.with(getActivity())
+                .load("http://img01.deviantart.net/f308/i/2012/007/8/3/camera_02_png_hq_by_gd08-d4lllmr.png")
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.placeholder)
+                .fitCenter()
+                .dontAnimate()
+//                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(mProductImage);
     }
 
     @Override

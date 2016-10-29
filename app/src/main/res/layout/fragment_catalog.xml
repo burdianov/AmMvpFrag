@@ -18,6 +18,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <View
+            android:background="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size_2">
+
+        </View>
+
         <Button
             android:id="@+id/add_to_card_btn"
             android:layout_marginTop="@dimen/spacing_normal_16"

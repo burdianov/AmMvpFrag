@@ -30,10 +30,9 @@
                 android:id="@+id/product_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
                 app:aspect_ratio="1.78"
-                android:layout_marginTop="@dimen/spacing_small_8"
-                android:scaleType="centerCrop"
-                android:src="@drawable/radio_image"/>
+                android:layout_marginTop="@dimen/spacing_small_8"/>
 
             <LinearLayout
                 android:paddingTop="@dimen/spacing_medial_24"
