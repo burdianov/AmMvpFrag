@@ -29,7 +29,7 @@
 
         <Button
             android:id="@+id/add_to_card_btn"
-            android:layout_marginTop="@dimen/spacing_normal_16"
+            android:layout_marginTop="@dimen/spacing_small_8"
             android:layout_marginBottom="@dimen/spacing_normal_16"
             android:text="@string/add_to_cart"
             style="@style/CustomButton"

@@ -103,7 +103,7 @@ public class ProductFragment extends Fragment implements IProductView, View.OnCl
         // TODO: 29-Oct-16 find the solution how to maintain proper size
         // TODO: without using dontAnimate
         Glide.with(getActivity())
-                .load(getString(R.string.product_camera))
+                .load(product.getImageUrl())
                 .placeholder(R.drawable.placeholder)
                 .error(R.drawable.placeholder)
                 .fitCenter()
