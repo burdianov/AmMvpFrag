@@ -62,5 +62,9 @@
     <string name="product_url_8">https://www.frostriver.com/wp-content/uploads/2014/02/p-363-652-Flight-Bag.png</string>
     <string name="product_url_9">http://3.bp.blogspot.com/-l3MxjN1EL8c/VcLaLAGZ0vI/AAAAAAAAE9M/pbiRVc9zl3c/s1600/car_large.png</string>
     <string name="product_url_10">http://www.doubleselect.com/wp-content/uploads/2012/07/Mr.Hare_AW12_footwear_shoes.png</string>
+    <string name="are_you_sure">Are you sure you want to exit?</string>
+    <string name="close_app">Close App?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
 
 </resources>

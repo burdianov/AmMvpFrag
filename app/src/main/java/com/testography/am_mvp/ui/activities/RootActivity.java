@@ -1,6 +1,7 @@
 package com.testography.am_mvp.ui.activities;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -15,6 +16,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -29,6 +31,7 @@ import com.testography.am_mvp.ui.fragments.CatalogFragment;
 import com.testography.am_mvp.utils.RoundedAvatarDrawable;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,6 +54,10 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
 
     FragmentManager mFragmentManager;
 
+    private ArrayList<Integer> mNavSet = new ArrayList<>();
+
+    private int mActiveNavItem = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +73,44 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
                     .replace(R.id.fragment_container, new CatalogFragment())
                     .commit();
         }
+    }
 
+    @Override
+    public void onBackPressed() {
+        if (mDrawer.isDrawerOpen(GravityCompat.START)) {
+            mDrawer.closeDrawer(GravityCompat.START);
+        } else {
+            if (mFragmentManager.getBackStackEntryCount() == 0) {
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.close_app)
+                        .setMessage(R.string.are_you_sure)
+                        .setPositiveButton(R.string.yes,
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which) {
+                                        finish();
+                                    }
+                                })
+                        .setNegativeButton(R.string.no,
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog,
+                                                        int which) {
+                                    }
+                                }).show();
+            } else {
+                super.onBackPressed();
+                int activeItem = 0;
+                mNavSet.remove(mNavSet.size() - 1);
+                if (mNavSet.size() > 0) {
+                    activeItem = mNavSet.get(mNavSet.size() - 1);
+                } else if (mNavSet.size() == 0) {
+                    activeItem = 1;
+                }
+                mNavigationView.getMenu().getItem(activeItem).setChecked(true);
+            }
+        }
     }
 
     private void initDrawer() {
@@ -88,24 +132,30 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
         switch (item.getItemId()) {
             case R.id.nav_account:
                 fragment = new AccountFragment();
+                mActiveNavItem = 0;
                 break;
             case R.id.nav_catalog:
                 fragment = new CatalogFragment();
+                mActiveNavItem = 1;
                 break;
             case R.id.nav_favorites:
+                mActiveNavItem = 2;
                 break;
             case R.id.nav_orders:
+                mActiveNavItem = 3;
                 break;
             case R.id.nav_notifications:
+                mActiveNavItem = 4;
                 break;
         }
         if (fragment != null) {
             mFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, fragment)
-                    .addToBackStack(null)
+                    .addToBackStack(String.valueOf(mActiveNavItem))
                     .commit();
         }
         mDrawer.closeDrawer(GravityCompat.START);
+        mNavSet.add(mActiveNavItem);
         return true;
     }
 

@@ -177,6 +177,7 @@ public class SplashActivity extends AppCompatActivity implements IAuthView, View
     public void showCatalogScreen() {
         Intent intent = new Intent(this, RootActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void setSocialButtonsAnimation(ImageButton button) {

@@ -107,36 +107,5 @@ public class DataManager {
                 getResVal(R.string.product_name_10),
                 getResVal(R.string.product_url_10),
                 getResVal(R.string.lorem_ipsum), 100, 1));
-//        mMockProductList.add(new ProductDto(2, "Monitor", "https://openclipart" +
-//                ".org/image/800px/svg_to_png/6977/molumen-LCD-Monitor.png", "description" +
-//                " 1 description 1 description 1 description 1 description 1", 200,
-//                1));
-//        mMockProductList.add(new ProductDto(3, "Printer", "http://pngimg.com/upload/printer_PNG7726.png",
-//                "description" +
-//                        " 1 description 1 description 1 description 1 description 1", 300,
-//                1));
-//        mMockProductList.add(new ProductDto(4, "Laptop", "http://images.clipartpanda.com/laptop-png-The-Lenovo-IdeaPad-Y550P-324156U-laptop.png", "description" +
-//                " 1 description 1 description 1 description 1 description 1", 400,
-//                1));
-//        mMockProductList.add(new ProductDto(5, "Guitar", "https://d13yacurqjgara.cloudfront.net/users/5172/screenshots/873110/attachments/93723/guitar.png", "description" +
-//                " 1 description 1 description 1 description 1 description 1", 500,
-//                1));
-//        mMockProductList.add(new ProductDto(6, "Dumbbell", "http://www.eserfitness.com/wp-content/uploads/2014/12/Dumbbell-pack.png",
-//                "description" +
-//                        " 1 description 1 description 1 description 1 description 1", 600,
-//                1));
-//        mMockProductList.add(new ProductDto(7, "Cake", "http://pngimg.com/upload/cake_PNG13114.png", "description" +
-//                " 1 description 1 description 1 description 1 description 1", 700,
-//                1));
-//        mMockProductList.add(new ProductDto(8, "Bag", "https://www.frostriver.com/wp-content/uploads/2014/02/p-363-652-Flight-Bag.png", "description" +
-//                " 1 description 1 description 1 description 1 description 1", 800,
-//                1));
-//        mMockProductList.add(new ProductDto(9, "test 9", "imageUrl", "description" +
-//                " 1 description 1 description 1 description 1 description 1", 900,
-//                1));
-//        mMockProductList.add(new ProductDto(10, "test 10", "imageUrl",
-//                "description " +
-//                        "1 description 1 description 1 description 1 description 1", 1000,
-//                1));
     }
 }
