@@ -28,6 +28,9 @@ import com.testography.am_mvp.R;
 import com.testography.am_mvp.mvp.views.IView;
 import com.testography.am_mvp.ui.fragments.AccountFragment;
 import com.testography.am_mvp.ui.fragments.CatalogFragment;
+import com.testography.am_mvp.ui.fragments.FavoritesFragment;
+import com.testography.am_mvp.ui.fragments.NotificationsFragment;
+import com.testography.am_mvp.ui.fragments.OrdersFragment;
 import com.testography.am_mvp.utils.RoundedAvatarDrawable;
 
 import java.io.InputStream;
@@ -139,12 +142,15 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
                 mActiveNavItem = 1;
                 break;
             case R.id.nav_favorites:
+                fragment = new FavoritesFragment();
                 mActiveNavItem = 2;
                 break;
             case R.id.nav_orders:
+                fragment = new OrdersFragment();
                 mActiveNavItem = 3;
                 break;
             case R.id.nav_notifications:
+                fragment = new NotificationsFragment();
                 mActiveNavItem = 4;
                 break;
         }
