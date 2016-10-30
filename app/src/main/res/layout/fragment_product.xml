@@ -22,7 +22,7 @@
             <TextView
                 android:id="@+id/product_description_txt"
                 style="@style/ProductText.ProductDescription"
-                android:text="Aliquam volutpat enim a nunc gravida vestibulum. Proin vel mollis mi. Nulla malesuada sollicitudin justo eget pellentesque. Mauris faucibus scelerisque nisl imperdiet facilisis."/>
+                android:text="@string/lorem_ipsum"/>
 
             <!-- TODO: aspectRatio ImageView -->
 
@@ -65,7 +65,7 @@
                         <TextView
                             android:id="@+id/product_count_txt"
                             style="@style/ProductText.ValuePrice"
-                            android:text="1"/>
+                            android:text="@string/sample_quantity"/>
 
                         <ImageButton
                             android:id="@+id/plus_btn"

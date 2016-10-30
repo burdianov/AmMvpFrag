@@ -72,4 +72,5 @@
     <dimen name="count_button_height">44dp</dimen>
     <dimen name="count_button_padding">12dp</dimen>
     <dimen name="product_image_height">180dp</dimen>
+    <dimen name="badge_text_size">12sp</dimen>
 </resources>

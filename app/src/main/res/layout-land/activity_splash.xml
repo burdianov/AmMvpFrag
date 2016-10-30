@@ -128,7 +128,7 @@
                 android:layout_marginRight="@dimen/spacing_small_8"
                 android:layout_marginTop="@dimen/spacing_normal_16"
                 android:background="@drawable/fb_selector_btn"
-                android:contentDescription="Facebook button"/>
+                android:contentDescription="@string/facebook_button"/>
 
             <ImageButton
                 android:id="@+id/twitter_ib"
@@ -139,7 +139,7 @@
                 android:layout_marginRight="@dimen/spacing_small_8"
                 android:layout_marginTop="@dimen/spacing_normal_16"
                 android:background="@drawable/twitter_selector_btn"
-                android:contentDescription="Twitter button"/>
+                android:contentDescription="@string/twitter_button"/>
 
             <ImageButton
                 android:id="@+id/vk_ib"
@@ -150,7 +150,7 @@
                 android:layout_marginRight="@dimen/spacing_small_8"
                 android:layout_marginTop="@dimen/spacing_normal_16"
                 android:background="@drawable/vk_selector_btn"
-                android:contentDescription="VK button"/>
+                android:contentDescription="@string/vk_button"/>
 
         </LinearLayout>
 

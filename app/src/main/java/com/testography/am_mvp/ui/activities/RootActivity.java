@@ -1,11 +1,14 @@
 package com.testography.am_mvp.ui.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
@@ -19,7 +22,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
@@ -31,6 +36,7 @@ import com.testography.am_mvp.ui.fragments.CatalogFragment;
 import com.testography.am_mvp.ui.fragments.FavoritesFragment;
 import com.testography.am_mvp.ui.fragments.NotificationsFragment;
 import com.testography.am_mvp.ui.fragments.OrdersFragment;
+import com.testography.am_mvp.utils.BadgeDrawable;
 import com.testography.am_mvp.utils.RoundedAvatarDrawable;
 
 import java.io.InputStream;
@@ -61,6 +67,9 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
 
     private int mActiveNavItem = 1;
 
+    private LayerDrawable mCartMenuIcon;
+    private int mCartCount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +85,35 @@ public class RootActivity extends AppCompatActivity implements IView, Navigation
                     .replace(R.id.fragment_container, new CatalogFragment())
                     .commit();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        mCartMenuIcon = (LayerDrawable) menu.findItem(R.id.action_cart).getIcon();
+        setBadgeCount(this, mCartMenuIcon, String.valueOf(mCartCount++));
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public static void setBadgeCount(Context context, LayerDrawable icon, String count) {
+
+        BadgeDrawable badge;
+
+        // Reuse drawable if possible
+        Drawable reuse = icon.findDrawableByLayerId(R.id.ic_badge);
+        if (reuse != null && reuse instanceof BadgeDrawable) {
+            badge = (BadgeDrawable) reuse;
+        } else {
+            badge = new BadgeDrawable(context);
+        }
+
+        badge.setCount(count);
+        icon.mutate();
+        icon.setDrawableByLayerId(R.id.ic_badge, badge);
+    }
+
+    public void onClickIncrementCartCount(View view) {
+        setBadgeCount(this, mCartMenuIcon, String.valueOf(mCartCount++));
     }
 
     @Override
