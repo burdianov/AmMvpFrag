@@ -29,6 +29,9 @@ public class AuthPresenter extends AbstractPresenter<IAuthView> implements
 
     @Override
     public void initView() {
+        if (checkUserAuth()) {
+            getView().showCatalogScreen();
+        }
         if (getView() != null) {
             if (checkUserAuth()) {
                 getView().hideLoginBtn();
